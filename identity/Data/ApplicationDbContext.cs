@@ -18,6 +18,8 @@ namespace identity.Data
         ApplicationRoleClaim, ApplicationUserToken
     >
     {
+
+        // Add TableNameSettings reference
         private TableNameSettings TableNameSettings { get; set; }
 
         public ApplicationDbContext()
@@ -25,10 +27,13 @@ namespace identity.Data
             
         }
 
+        // Inject TableNameSettings into IOptions within constructor
         public ApplicationDbContext(IOptions<TableNameSettings> settings)
         {
             TableNameSettings = settings.Value;
         }
+
+        // Inject TableNameSettings into IOptions within constructor
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options, IOptions<TableNameSettings> settings)
             : base(options)
         {
