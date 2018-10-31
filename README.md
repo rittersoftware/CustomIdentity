@@ -11,7 +11,7 @@
 
 You can rename these to whatever works for you for cusomizing the table names that are generated
  
-### appsettings.json
+### appsettings.json file
 
 Change the SQLServerConnection string setting to match your datasource. Please follow best practice guidelines and don't include any sensitive information in plain text such as this json file.
 Best option is to use Azure Key Vault for secret storage
@@ -20,8 +20,7 @@ Best option is to use Azure Key Vault for secret storage
  "SQLServerConnection": "{insert your sql server connection string}"
  ```
 
- ### Table Naming Section
-
+ ###Table Naming Section
  ```json
  "CustomIdentityTables": {
     "UsersTableName": "Users",
@@ -213,4 +212,20 @@ Best option is to use Azure Key Vault for secret storage
         }
     }
 
+```
+
+#### Entity Framework Migration Commands
+
+
+dotnet cli
+```
+dotnet ef database drop (optional - if you need to drop the existing database)
+dotnet ef migrations add {nameofmigration} --context {nameofdbcontext}
+dotnet ef database update --context {nameofdbcontext}
+```
+Package Manager
+```
+Drop-Database (optional - if you need to drop the existing database)
+Add-Migration {nameofmigration} -Context {nameofdbcontext}
+Update-Database -Context {nameofdbcontext}
 ```
