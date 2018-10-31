@@ -76,6 +76,7 @@ Best option is to use Azure Key Vault for secret storage
         ApplicationRoleClaim, ApplicationUserToken
     >
     {
+        // Add TableNameSettings reference
         private TableNameSettings TableNameSettings { get; set; }
 
         public ApplicationDbContext()
@@ -83,10 +84,13 @@ Best option is to use Azure Key Vault for secret storage
             
         }
 
+        // Inject TableNameSettings into IOptions within constructor
         public ApplicationDbContext(IOptions<TableNameSettings> settings)
         {
             TableNameSettings = settings.Value;
         }
+
+        // Inject TableNameSettings into IOptions within constructor
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options, IOptions<TableNameSettings> settings)
             : base(options)
         {
