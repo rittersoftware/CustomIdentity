@@ -20,7 +20,8 @@ Best option is to use Azure Key Vault for secret storage
  "SQLServerConnection": "{insert your sql server connection string}"
  ```
 
- ###Table Naming Section
+ ### Table Naming Section
+
  ```json
  "CustomIdentityTables": {
     "UsersTableName": "Users",
