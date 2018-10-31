@@ -28,13 +28,13 @@ namespace identity.Data
         }
 
         // Inject TableNameSettings into IOptions within constructor
-        public ApplicationDbContext(IOptions<TableNameSettings> settings)
+        public ApplicationDbContext(IOptionsSnapshot<TableNameSettings> settings)
         {
             TableNameSettings = settings.Value;
         }
 
         // Inject TableNameSettings into IOptions within constructor
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options, IOptions<TableNameSettings> settings)
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options, IOptionsSnapshot<TableNameSettings> settings)
             : base(options)
         {
             TableNameSettings = settings.Value;
