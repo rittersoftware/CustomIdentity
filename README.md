@@ -13,6 +13,14 @@ You can rename these to whatever works for you for cusomizing the table names th
  
 ### appsettings.json file
 
+Change the SQLServerConnection string setting to match your datasource. Please follow best practice guidelines and don't include any sensitive information in plain text such as this json file.
+Best option is to use Azure Key Vault for secret storage
+
+```json
+ "SQLServerConnection": "{insert your sql server connection string}"
+ ```
+
+ ###Table Naming Section
  ```json
  "CustomIdentityTables": {
     "UsersTableName": "Users",
