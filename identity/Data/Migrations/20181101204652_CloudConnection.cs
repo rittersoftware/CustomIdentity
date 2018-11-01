@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace identity.Data.Migrations
 {
-    public partial class Initial : Migration
+    public partial class CloudConnection : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

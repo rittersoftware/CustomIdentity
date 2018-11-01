@@ -10,8 +10,8 @@ using identity.Data;
 namespace identity.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20181031203915_UpdateModel")]
-    partial class UpdateModel
+    [Migration("20181101204652_CloudConnection")]
+    partial class CloudConnection
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

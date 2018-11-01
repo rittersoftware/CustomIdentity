@@ -57,7 +57,7 @@ namespace identity.Data
             base.OnConfiguring(builder);
             if (!builder.IsConfigured)
             {
-                builder.UseSqlServer("Data Source=(local);Initial Catalog=identity;User ID=testuser;Password=password;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False", optionsBuilder =>
+                builder.UseSqlServer("", optionsBuilder =>
                 {
                     optionsBuilder.UseRowNumberForPaging();
                     optionsBuilder.EnableRetryOnFailure(5);
